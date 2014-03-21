@@ -4,18 +4,15 @@ public class MonoalphabeticCipher implements Cipher {
 
 	private String secretAlphabet;
 	
-	public MonoalphabeticCipher(String secretAlphabet)
-	{
+	public MonoalphabeticCipher(String secretAlphabet) {
 		this.secretAlphabet = secretAlphabet;
 	}
 	
-	public String getSecretAlphabet()
-	{
+	public String getSecretAlphabet() {
 		return this.secretAlphabet;
 	}
 	
-	protected void setSecretAlphabet(String secretAlphabet)
-	{
+	protected void setSecretAlphabet(String secretAlphabet) {
 		this.secretAlphabet = secretAlphabet;
 	}
 
@@ -24,7 +21,7 @@ public class MonoalphabeticCipher implements Cipher {
         char[] bsarray = secretAlphabet.toCharArray();
         String returntext = "";
         
-        for (int i = 0; i < text.length(); i++) {
+        for(int i=0; i<text.length(); i++) {
                 char buchstabe = text.charAt(i);
                 if (buchstabe >= 'a' && buchstabe <= 'z') {
                         returntext = returntext + bsarray[buchstabe - 97];
@@ -40,10 +37,10 @@ public class MonoalphabeticCipher implements Cipher {
 	}
 
 	@Override
-	public String deencrypt(String text) {
+	public String decrypt(String text) {
         char[] bsarray = secretAlphabet.toCharArray();
         String returntext = "";
-        for (int i = 0; i < text.length(); i++) {
+        for (int i=0; i<text.length(); i++) {
                 char buchstabe = text.charAt(i);
                 if (buchstabe >= 'a' && buchstabe <= 'z') {
                         for (int a = 0; a < bsarray.length; a++) {
