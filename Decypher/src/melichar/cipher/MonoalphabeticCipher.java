@@ -24,8 +24,12 @@ public class MonoalphabeticCipher implements Cipher {
         for(int i=0; i<text.length(); i++) {
                 char buchstabe = text.charAt(i);
                 if (buchstabe >= 'a' && buchstabe <= 'z') {
+                		// - 97 da a in der ASCI-Tabelle die dezimale Nummer 97 ist
+                		// und der geheime Buchstabe wird hinzugefügt
                         returntext = returntext + bsarray[buchstabe - 97];
                 } else if (buchstabe >= 'A' && buchstabe <= 'Z') {
+                		// - 65 da a in der ASCI-Tabelle die dezimale Nummer 65 ist
+                		// und der geheime Buchstabe wird hinzugefügt
                         returntext = returntext + bsarray[buchstabe - 65];
                 } else {
                         System.err.println("Fehler: Ein Sonderzeichen oder eine Zahl war im Text.");
@@ -44,7 +48,9 @@ public class MonoalphabeticCipher implements Cipher {
                 char buchstabe = text.charAt(i);
                 if (buchstabe >= 'a' && buchstabe <= 'z') {
                         for (int a = 0; a < bsarray.length; a++) {
+                        	  	// - 32 da das geheim Alphabet nur Großbuchstaben besitzt
                                 if (((char) buchstabe - 32) == bsarray[a]) {
+                                		// - 32 eben wie oben genannt + den ausgewählten Index des Alphabtes
                                         returntext = returntext + (char) ('a' - 32 + a);
                                 }
                         }
