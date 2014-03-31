@@ -24,11 +24,11 @@ public class MonoalphabeticCipher implements Cipher {
         for(int i=0; i<text.length(); i++) {
                 char buchstabe = text.charAt(i);
                 if (buchstabe >= 'a' && buchstabe <= 'z') {
-                		// - 97 da a in der ASCI-Tabelle die dezimale Nummer 97 ist
+                		// - 97 da a in der ASCI-Tabelle die dezimale Nummer 97 ist -> x-Stelle im Array
                 		// und der geheime Buchstabe wird hinzugefügt
                         returntext = returntext + bsarray[buchstabe - 97];
                 } else if (buchstabe >= 'A' && buchstabe <= 'Z') {
-                		// - 65 da a in der ASCI-Tabelle die dezimale Nummer 65 ist
+                		// - 65 da a in der ASCI-Tabelle die dezimale Nummer 65 ist -> x-Stelle im Array
                 		// und der geheime Buchstabe wird hinzugefügt
                         returntext = returntext + bsarray[buchstabe - 65];
                 } else {

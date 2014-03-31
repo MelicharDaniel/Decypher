@@ -1,15 +1,13 @@
 package melichar.cipher;
 
-import javax.swing.JOptionPane;
-
 public class Test {
         public static void main (String [] args) {
                 String wort = "ISYVKJRUXEDZQMCTPLOFNBWGAH";
                 SubstitutionCipher kc = new SubstitutionCipher(wort);
                 System.out.println(kc.getSecretAlphabet());
-                wort = "Test";
+                wort = "Melichar";
                 System.out.println(kc.encrypt(wort));
-                wort = "FKOF";	// = test encr
+                wort = "QKZXYUIL";	// = test encr
                 System.out.println(kc.decrypt(wort));
         }
 }

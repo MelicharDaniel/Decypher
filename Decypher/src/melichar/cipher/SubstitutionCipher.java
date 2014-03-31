@@ -2,6 +2,11 @@ package melichar.cipher;
 
 public class SubstitutionCipher extends MonoalphabeticCipher {
 	
+	public SubstitutionCipher()	{
+		super("VMYWFARXIJHQBKCPDLOUNTSGEZ");
+		setSecretAlphabeticCipher("VMYWFARXIJHQBKCPDLOUNTSGEZ");
+	}
+	
 	public SubstitutionCipher(String secretAlphabeticCode) {
 		 super(secretAlphabeticCode);
          setSecretAlphabeticCipher(secretAlphabeticCode);
