@@ -9,10 +9,13 @@ import org.junit.*;
 
 public class TestCipher {
 
+	private final String wort = "Melichar";
+	private final String wortTwo = "Melichar Daniel";
+	
 	private ArrayList<String> secretAlphabet;
 	private ArrayList<String> encrypted;
 	private ArrayList<String> decrypted;
-	private final String wort = "Melichar";
+
 	private SubstitutionCipher sc;
 	
 	@Before
@@ -42,6 +45,21 @@ public class TestCipher {
 			System.out.println(sc.getSecretAlphabet());
 			
 			encrypted.add(sc.encrypt(wort));
+			System.out.println(encrypted.get(x));
+			decrypted.add(sc.decrypt(encrypted.get(x)));
+			System.out.println(decrypted.get(x));
+			
+			System.out.println();
+		}
+	}
+	
+	@Test
+	public void testTwoWords() {
+		for(int x=0; x<secretAlphabet.size(); x++) {
+			sc.setSecretAlphabeticCipher(secretAlphabet.get(x));
+			System.out.println(sc.getSecretAlphabet());
+			
+			encrypted.add(sc.encrypt(wortTwo));
 			System.out.println(encrypted.get(x));
 			decrypted.add(sc.decrypt(encrypted.get(x)));
 			System.out.println(decrypted.get(x));

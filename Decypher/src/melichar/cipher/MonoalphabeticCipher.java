@@ -1,21 +1,45 @@
 package melichar.cipher;
 
+/**
+ * Klasse MonoalphabeticCipher implementiert die Klasse Cipher. Es kann durch das Geheimalphabet
+ * Wörter verschlüsseln als auch entschlüsseln.
+ * @author Daniel Melichar
+ * @version 31.03.2014
+*/
 public class MonoalphabeticCipher implements Cipher {
 
 	private String secretAlphabet;
 	
+    /**
+     * Konstruktor zur Klasse
+     * @param secretAlphabet
+    */
 	public MonoalphabeticCipher(String secretAlphabet) {
 		this.secretAlphabet = secretAlphabet;
 	}
 	
+
+    /**
+     * Getter Klasse. Gibt das geheime Alphabet zurück.
+     * @return secretAlphabet
+    */
 	public String getSecretAlphabet() {
 		return this.secretAlphabet;
 	}
 	
+	/**
+     * Setter Klasse. Setzt ein eigenes geheimes Alphabet.
+     * @param secretAlphabet
+    */
 	protected void setSecretAlphabet(String secretAlphabet) {
 		this.secretAlphabet = secretAlphabet;
 	}
-
+	
+    /**
+     * Klasse zum Verschlüsseln eines Textes mit Hilfe des geheimen Alphabtes
+     * @param text
+     * @return returntext
+    */
 	@Override
 	public String encrypt(String text) {
         char[] bsarray = secretAlphabet.toCharArray();
@@ -40,6 +64,11 @@ public class MonoalphabeticCipher implements Cipher {
         return returntext;
 	}
 
+    /**
+     * Klasse zum Entschlüsseln eines Textes mit Hilfe des geheimen Alphabtes
+     * @param text
+     * @return returntext
+    */
 	@Override
 	public String decrypt(String text) {
         char[] bsarray = secretAlphabet.toCharArray();

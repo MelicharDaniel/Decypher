@@ -1,7 +1,18 @@
 package melichar.cipher;
 
+
+/**
+* Klasse SubstitutionCipher erbt von der MonoalphabeticCipher Klasse die Methoden und den Parameter
+* und setzt durch ein Kennwort ein geheimes Alphabet.
+* @author Daniel Melichar
+* @version 31.03.2014
+*/
 public class SubstitutionCipher extends MonoalphabeticCipher {
 	
+	/**
+     * Konstruktor zur Klasse
+     * @param keyword
+    */
 	public SubstitutionCipher()	{
 		super("VMYWFARXIJHQBKCPDLOUNTSGEZ");
 		setSecretAlphabeticCipher("VMYWFARXIJHQBKCPDLOUNTSGEZ");
@@ -11,7 +22,11 @@ public class SubstitutionCipher extends MonoalphabeticCipher {
 		 super(secretAlphabeticCode);
          setSecretAlphabeticCipher(secretAlphabeticCode);
 	}
-
+	
+	 /**
+     * Methode welches ein geheimes Alphabet mit einem Kennwort erstellt.
+     * @param keyword
+    */
 	public void setSecretAlphabeticCipher(String secretAlphabeticCode) {
         secretAlphabeticCode = secretAlphabeticCode.toLowerCase();
         StringBuffer sb = new StringBuffer(secretAlphabeticCode);
