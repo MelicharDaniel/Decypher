@@ -10,6 +10,10 @@ public class MonoalphabeticCipher implements Cipher {
 
 	private String secretAlphabet;
 	
+	public MonoalphabeticCipher() {
+		
+	}
+	
     /**
      * Konstruktor zur Klasse
      * @param secretAlphabet
