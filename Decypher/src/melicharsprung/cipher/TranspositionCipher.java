@@ -1,5 +1,12 @@
 package melicharsprung.cipher;
 
+/**
+ * Transposition Cipher
+ * 
+ * @author Daniel Melichar
+ * @version 23-04-2014
+ *
+ */
 public class TranspositionCipher implements Cipher {
 
 	private int transpositionLevel;
